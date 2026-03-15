@@ -28,3 +28,13 @@ export function getParam(param) {
   const product = urlParams.get('product')
   return product;
 }
+
+export function renderListWithTemplate(template, parentElement, list, position = "afterbegin", clear = false) {
+  const html = list.map(template).join("");
+  
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+  
+  parentElement.insertAdjacentHTML(position, html);
+} 
