@@ -36,7 +36,7 @@ function cartItemTemplate(item) {
       <p class="cart-card__color">${item.Colors[0].ColorName}</p>
       <p class="cart-card__quantity">qty: 1</p>
       <p class="cart-card__price">$${item.FinalPrice}</p>
-      <button class="cart-card__remove" aria-label="Remove item from cart" data-id="${item.Id}">
+      <button class="cart-card__remove" aria-label="Remove item from cart" id="${item.Id}">
         &times;
       </button>
     </li>
