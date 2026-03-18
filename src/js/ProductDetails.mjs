@@ -17,6 +17,9 @@ export default class ProductDetails {
 
   addProductToCart() {
     const product = this.product;
+    const productsCart = JSON.parse(localStorage.getItem("so-cart")) || [];
+    const productExists = productsCart.some((item) => item.Id === product.Id);
+    if (productExists) return;
     const cart = JSON.parse(localStorage.getItem("so-cart")) || [];
     setLocalStorage("so-cart", [...cart, product]);
   }
@@ -42,7 +45,7 @@ export default class ProductDetails {
             </p>
 
             <div class="product-detail__add">
-                <button id="addToCart" data-id="${this.product.ID}">Add to Cart</button>
+                <button id="addToCart" data-id="${this.product.Id}">Add to Cart</button>
             </div>
       `;
     qs(".product-detail").innerHTML = template;
