@@ -25,7 +25,10 @@ function cartItemTemplate(item) {
   const newItem = /* html */ `
     <li class="cart-card divider">
       <a href="#" class="cart-card__image">
-        <img src="${item.Image}" alt="${item.Name}" />
+        <img
+          src="${item.Images?.PrimarySmall}"
+          alt="${item.Name}"
+        />
       </a>
       <a href="#">
         <h2 class="card__name">${item.Name}</h2>
@@ -33,7 +36,9 @@ function cartItemTemplate(item) {
       <p class="cart-card__color">${item.Colors[0].ColorName}</p>
       <p class="cart-card__quantity">qty: 1</p>
       <p class="cart-card__price">$${item.FinalPrice}</p>
-      <button class="cart-card__remove" id="${item.Id}">&times;</button>
+      <button class="cart-card__remove" aria-label="Remove item from cart" data-id="${item.Id}">
+        &times;
+      </button>
     </li>
   `;
 
