@@ -22,7 +22,6 @@ export default class ProductDetails {
 
     if (existingProduct) {
       existingProduct.qty += 1;
-      return;
     } else {
       productsCart.push({ ...product, qty: 1 });
     }
