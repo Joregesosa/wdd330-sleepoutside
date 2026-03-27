@@ -244,12 +244,41 @@ button {
 .cart-card__remove {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -1.2rem;
   background-color: transparent;
   border: 0;
   font-size: var(--small-font);
   color: var(--dark-grey);
   cursor: pointer;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.cart-footer {
+  max-width: 640px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-link {
+  padding: 0.5em 2em;
+  background-color: var(--secondary-color);
+  color: white;
+  border: 0;
+  font-size: var(--large-font);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.total {
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .category-list {
@@ -282,10 +311,15 @@ button {
   .cart-card {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
+    padding-block: 1.5rem;
   }
 }
 
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+
+.hide {
+  display: none;
 }
